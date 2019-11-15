@@ -23,7 +23,7 @@ export const Bio = () => (
                 }}
               />
               <div className="author-name">
-                <span className="author-name-prefix">Written by</span>
+                <span className="author-name-prefix">작성자, </span>
                 <Link to={'/about'} className="author-name-content">
                   <span>@{author}</span>
                 </Link>
