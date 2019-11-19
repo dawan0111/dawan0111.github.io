@@ -1,7 +1,7 @@
 ---
 title: TypeScript - Generics
 date: 2019-11-15 17:11:85
-category: development
+category: typescript
 ---
 
 # Typescript Generics(제네릭)
