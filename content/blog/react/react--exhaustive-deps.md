@@ -1,6 +1,6 @@
 ---
-title: React - exhaustive-deps warning 오류 해결법
-date: 2019-11-28 11:11:02
+title: React - exhaustive-deps warning 해결법
+date: 2019-12-19 22:01:02
 category: react
 ---
 
