@@ -99,7 +99,7 @@ printFoo(c);
 성능이 좋은 자바스크립트 프로그램을 만들고 싶다면, 자바스크립트를 정적인 언어라고 생각하고 쓰는 것이 좋습니다. 동적인 특성들을 최대한 활용하여 멋지고 파워풀한 코드를 작성할 수도 있지만, 거기엔 항상 성능이라는 대가가 따른다는 것을 명심해야 합니다.
 
 
-## 출처
+## 참고한 자료
 [자바스크립트는 어떻게 작동하는가: V8 엔진의 내부 + 최적화된 코드를 작성을 위한 다섯 가지 팁](https://engineering.huiseoul.com/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%EA%B0%80-v8-%EC%97%94%EC%A7%84%EC%9D%98-%EB%82%B4%EB%B6%80-%EC%B5%9C%EC%A0%81%ED%99%94%EB%90%9C-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%9E%91%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%8B%A4%EC%84%AF-%EA%B0%80%EC%A7%80-%ED%8C%81-6c6f9832c1d9)
 
 [V8의 히든 클래스 이야기](https://engineering.linecorp.com/ko/blog/v8-hidden-class/)

@@ -54,13 +54,25 @@ export function Head({ description, lang, meta, keywords, title }) {
               .concat(
                 keywords.length > 0
                   ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
+                    name: `keywords`,
+                    content: keywords.join(`, `),
+                  }
                   : []
               )
               .concat(meta)}
-          />
+          >
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154898746-1"></script>
+            <script>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-154898746-1');
+              `}
+            </script>
+
+          </Helmet>
         )
       }}
     />

@@ -90,5 +90,5 @@ useCallback은 함수만 반환한다 생각하고 useMemo는 값(함수포함) 
 1. 간단한 작업에도 사용하게된다면 오히려 성능이 악화 될 수도 있다. 간단한 작업은 garbage collected 되고 새로운것이 생성되는 것이 더 효율적이다.
 2. useCallback, useMemo의 함수는 생성되던 당시의 상태를 보존한다.
 
-## 참고
+## 참고한 자료
 [When to useMemo and useCallback](https://ideveloper2.dev/blog/2019-06-14--when-to-use-memo-and-use-callback/)
