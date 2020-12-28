@@ -29,6 +29,12 @@ export const Bio = () => (
                 </Link>
                 <div className="author-introduction">{introduction}</div>
                 <p className="author-socials">
+                  <a
+                    href="https://www.notion.so/Kim-Dae-Wan-fdcc28db02174cc2ad2a566330184811"
+                    aria-label="notion"
+                  >
+                    About
+                  </a>
                   {social.github && (
                     <a href={`https://github.com/${social.github}`}>GitHub</a>
                   )}
