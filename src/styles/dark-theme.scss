@@ -3,6 +3,14 @@ body.dark {
   text-shadow: $dark-text-shadow;
   color: $dark-light-font-color;
 
+  .top {
+    background: #fff;
+
+    .link {
+      color: #000;
+    }
+  }
+
   // home
   .home-header {
     color: $dark-light-font-color;

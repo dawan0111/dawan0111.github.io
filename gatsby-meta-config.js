@@ -1,8 +1,8 @@
 module.exports = {
-  title: `정리노트`,
+  title: `📕 정리노트`,
   description: `개발중 생각했던것들을 정리하는 공간`,
   author: `김대완`,
-  introduction: `누추한 곳에 귀한분이...`,
+  introduction: `안녕하세요`,
   siteUrl: `https://dawan0111.github.io`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account

@@ -7,6 +7,14 @@ body.light {
     color: $dark-gray;
   }
 
+  .top {
+    background: #fff;
+
+    .link {
+      color: #000;
+    }
+  }
+
   .bio {
     .author-name-content {
       background-color: $light-category-border-color;

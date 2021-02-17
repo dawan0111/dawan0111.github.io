@@ -23,10 +23,9 @@ export const Bio = () => (
                 }}
               />
               <div className="author-name">
-                <span className="author-name-prefix">작성자, </span>
-                <Link to={'/about'} className="author-name-content">
+                <a href="https://www.notion.so/Kim-Dae-Wan-fdcc28db02174cc2ad2a566330184811" aria-label="notion" className="author-name-content">
                   <span>@{author}</span>
-                </Link>
+                </a>
                 <div className="author-introduction">{introduction}</div>
                 <p className="author-socials">
                   <a
