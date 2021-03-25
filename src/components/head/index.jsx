@@ -3,7 +3,57 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+function waitForGlobal(name, timeout = 300) {
+  return new Promise((resolve, reject) => {
+    let waited = 0
+
+    function wait(interval) {
+      setTimeout(() => {
+        waited += interval
+        // some logic to check if script is loaded
+        // usually it something global in window object
+        if (window[name] !== undefined) {
+          return resolve()
+        }
+        if (waited >= timeout * 1000) {
+          return reject({ message: 'Timeout' })
+        }
+        wait(interval * 2)
+      }, interval)
+    }
+
+    wait(30)
+  })
+}
+
 export function Head({ description, lang, meta, keywords, title }) {
+  React.useEffect(() => {
+    waitForGlobal('MathJax').then(() => {
+      top.MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['[', ']']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          TeX: {
+            equationNumbers: { autoNumber: 'AMS' },
+            extensions: ['AMSmath.js', 'AMSsymbols.js'],
+          },
+        },
+      })
+    })
+    if (top.MathJax != null) {
+      top.MathJax.Hub.Queue(['Typeset', top.MathJax.Hub])
+    }
+  }, [])
+
+  React.useEffect(() => {
+    if (top.MathJax != null) {
+      top.MathJax.Hub.Queue(['Typeset', top.MathJax.Hub])
+    }
+  })
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -62,6 +112,11 @@ export function Head({ description, lang, meta, keywords, title }) {
               .concat(meta)}
           >
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154898746-1"></script>
+            <script
+              type="text/javascript"
+              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+              async
+            />
             <script>
               {`
                 window.dataLayer = window.dataLayer || [];
