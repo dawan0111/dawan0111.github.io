@@ -20,7 +20,7 @@ category: javascript
 
 그 후 시리얼을 킨 후 AT 명령어를 활용하여 블루투스 모듈을 설정 및 값을 가져옵니다.
 1. AT+ROLE0
-2. AT+NAME[사용할 이름]
+2. AT+NAME 사용할 이름
 3. AT+RESET
 4. AT+UUID
 5. AT+CHAR
