@@ -18,19 +18,26 @@ import '../styles/code.scss'
 import '../styles/blog-post.scss'
 
 export default ({ data, pageContext, location }) => {
-  useEffect(() => {
-    ScrollManager.init()
-    return () => ScrollManager.destroy()
-  }, [])
-
   const post = data.markdownRemark
   const metaData = data.site.siteMetadata
   const { title, comment, siteUrl, author, sponsor } = metaData
   const { disqusShortName, utterances } = comment
 
+  useEffect(() => {
+    ScrollManager.init()
+    return () => ScrollManager.destroy()
+  }, [])
+
   return (
     <Layout location={location} title={title}>
       <Head title={post.frontmatter.title} description={post.excerpt} />
+      {post.frontmatter.thumbnail && (
+        <img
+          src={post.frontmatter.thumbnail.childImageSharp.fluid.src}
+          alt={post.frontmatter.title}
+          style={{ marginTop: '2rem' }}
+        />
+      )}
       <PostTitle title={post.frontmatter.title} />
       <PostContainer html={post.html} />
       <SocialShare title={post.frontmatter.title} author={author} />
@@ -76,6 +83,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
